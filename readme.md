@@ -19,6 +19,12 @@ Once you're sure you have the prerequisites in order, run `npm install` after cl
 
 ## Use
 
-Check the scripts in package.json for available functions. 
+`gulp sass` compile scss files
+
+`gulp connect` start a development server with no auto-reload
+
+`gulp watch` watch the src and scss directories for changes and compile/transpile as needed
+
+`gulp connect watch` the most useful one, start the server with live reload and watch for changes
 
 Happy hacking.

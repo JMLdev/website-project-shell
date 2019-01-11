@@ -5,14 +5,17 @@
   },
   "devDependencies": {
     "gulp": "^4.0.0",
-    "gulp-compile-handlebars": "^0.6.1",
     "gulp-connect": "^5.7.0",
+    "gulp-hb": "^7.0.1",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.11.0"
   },
   "name": "project_shell",
   "description": "This is my quick and dirty project setup which includes a Sass compiler, Mustache templating through Handlebars.js, and maybe some babel stuff.",
-  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JMLdev/website-project-shell.git"
+  },
   "main": "index.js",
   "author": "JMLdev",
   "license": "ISC"

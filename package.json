@@ -1,5 +1,8 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "html5shiv": "^3.7.3",
+    "normalize.css": "^8.0.1"
+  },
   "scripts": {
     "scss": "node-sass — watch scss -o css"
   },

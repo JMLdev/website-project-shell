@@ -10,7 +10,8 @@ sass.compiler = require('node-sass');
 gulp.task('sass', function () {
 	return gulp.src('./src/sass/**/*.scss')
 		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./dist/css'));
+		.pipe(gulp.dest('./dist/css'))
+		.pipe(connect.reload());
 });
 
 gulp.task('connect', function (cb) {
@@ -38,9 +39,16 @@ gulp.task('handlebars', function() {
 		.pipe(gulp.dest('./dist'))
 });
 
+gulp.task('move', function (cb) {
+	gulp.src("./src/img/**/*.*")
+		.pipe(gulp.dest('./dist/img/'));
+	cb();
+});
+
 gulp.task('watch', function (cb) {
-	gulp.watch('./src/**/*.hbs', gulp.series('handlebars'));
+	gulp.watch(['./src/**/*.hbs', './src/*.html'], gulp.series('handlebars'));
 	gulp.watch('./dist/*.html', gulp.series('html'));
 	gulp.watch('./src/sass/*.scss', gulp.series('sass'));
+	gulp.watch('./src/img/**/*.*', gulp.series('move'));
 	cb();
 });

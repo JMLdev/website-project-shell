@@ -45,6 +45,13 @@ gulp.task('move', function (cb) {
 	cb();
 });
 
+gulp.task("build", function(cb) {
+	gulp.series("sass");
+	gulp.series("handlebars");
+	gulp.series("move");
+	cb();
+});
+
 gulp.task('watch', function (cb) {
 	gulp.watch(['./src/**/*.hbs', './src/*.html'], gulp.series('handlebars'));
 	gulp.watch('./dist/*.html', gulp.series('html'));

@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 const hb = require("gulp-hb");
-
+const minify = require("gulp-minify");
 sass.compiler = require('node-sass');
 
 gulp.task('sass', function () {
@@ -22,13 +22,13 @@ gulp.task('connect', function (cb) {
 	cb();
 });
 
-gulp.task('html', function (cb) {
-	gulp.src('./dist/*.html')
+gulp.task('reload', function (cb) {
+	gulp.src('./dist/**/*.*')
 		.pipe(connect.reload());
 	cb();
 });
 
-gulp.task('handlebars', function() {
+gulp.task('handlebars', function () {
 	return gulp
 		.src('./src/*.html')
 		.pipe(hb()
@@ -39,23 +39,31 @@ gulp.task('handlebars', function() {
 		.pipe(gulp.dest('./dist'))
 });
 
+gulp.task('js', function (cb) {
+	gulp.src('src/js/*.js')
+		.pipe(minify())
+		.pipe(gulp.dest('dist/js/'))
+	cb();
+});
+
 gulp.task('move', function (cb) {
 	gulp.src("./src/img/**/*.*")
 		.pipe(gulp.dest('./dist/img/'));
 	cb();
 });
 
-gulp.task("build", function(cb) {
-	gulp.series("sass");
-	gulp.series("handlebars");
-	gulp.series("move");
+gulp.task('build', function (cb) {
+	gulp.series('sass');
+	gulp.series('handlebars');
+	gulp.series('move');
 	cb();
 });
 
 gulp.task('watch', function (cb) {
 	gulp.watch(['./src/**/*.hbs', './src/*.html'], gulp.series('handlebars'));
-	gulp.watch('./dist/*.html', gulp.series('html'));
 	gulp.watch('./src/sass/*.scss', gulp.series('sass'));
 	gulp.watch('./src/img/**/*.*', gulp.series('move'));
+	gulp.watch('./src/js/*.js', gulp.series('js'));
+	gulp.watch("./dist/**/*.*", gulp.series("reload"));
 	cb();
 });

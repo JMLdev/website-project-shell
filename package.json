@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "gulp-concat": "^2.6.1",
     "html5shiv": "^3.7.3",
     "normalize.css": "^8.0.1"
   },
@@ -7,7 +8,9 @@
     "scss": "node-sass — watch scss -o css"
   },
   "devDependencies": {
+    "gulp-sourcemaps": "^2.6.5",
     "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-connect": "^5.7.0",
     "gulp-hb": "^7.0.1",
     "gulp-minify": "^3.1.0",

@@ -1,21 +1,18 @@
 {
   "dependencies": {
     "gulp-concat": "^2.6.1",
-    "html5shiv": "^3.7.3",
-    "normalize.css": "^8.0.1"
-  },
-  "scripts": {
-    "scss": "node-sass — watch scss -o css"
-  },
-  "devDependencies": {
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sass": "^5.1.0",
+    "normalize.css": "^8.0.1",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-connect": "^5.7.0",
     "gulp-hb": "^7.0.1",
     "gulp-minify": "^3.1.0",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.11.0"
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "scss": "node-sass — watch scss -o css"
   },
   "name": "project_shell",
   "description": "This is my quick and dirty project setup which includes a Sass compiler, Mustache templating through Handlebars.js, and maybe some babel stuff.",

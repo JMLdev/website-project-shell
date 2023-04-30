@@ -9,7 +9,7 @@
     "gulp-hb": "^7.0.1",
     "gulp-minify": "^3.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "node-sass": "^4.14.1"
+    "node-sass": "^8.0.0"
   },
   "scripts": {
     "scss": "node-sass — watch scss -o css"

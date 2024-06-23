@@ -1,2 +1,59 @@
-@import 'node_modules/normalize.css/normalize';
-@import 'typography';
+// RTL style import is at the bottom of the file, leave it there.
+@import 'normalize';
+// @import 'node_modules/bootstrap/scss/bootstrap';
+
+body {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 70px;
+}
+
+.container-fluid {
+    max-width: 1230px;
+}
+
+section {
+    margin-bottom: 96px;
+}
+
+img,
+iframe {
+    max-width: 100%;
+}
+
+// ul {
+//     margin-bottom: 14px;
+//     padding-inline-start: 0;
+
+//     li,
+//     li[style] {
+//         margin-bottom: 14px;
+//         padding-right: 40px;
+//         font-size: 20px;
+//         line-height: 30px;
+//         padding-left: 22px;
+//         list-style: none;
+//         list-style-position: outside;
+//         background-image: url('/img/dot.svg');
+//         background-position: 0 10px;
+//         background-size: 10px;
+//         background-repeat: no-repeat;
+
+//         span,
+//         span[style] {
+//             color: $black !important;
+//             font-size: 20px !important;
+//             font-weight: 30px !important;
+//         }
+//     }
+// }
+
+.v-centered {
+	align-content: center;
+	align-items: center;
+	display: flex;
+}
+
+figure {
+    margin-bottom: 0;
+}

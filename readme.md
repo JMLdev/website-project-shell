@@ -1,12 +1,6 @@
-# Quick Project Startpoint
+# Main Landing Page Templating Project
 
-This is my quick and dirty project setup which includes a Sass compiler, Mustache templating through Handlebars.js, and maybe some babel stuff. 
-
-This will be my first run at Gulp, since I've heard it is a better alternative to Grunt. Forgive me if it's poop.
-
-I'm using this to quickly get to work on one-off project requests and minimal page count sites.
-
-Feel free to use it if you like it. 
+The purpose of this module is to create an environment in which we can quickly build and stylize landing page templates, while still enabling templating technology like Sass and Handlebars. Please follow the Installation and Use sections. 
 
 ## Prerequisite
 
@@ -19,12 +13,27 @@ Once you're sure you have the prerequisites in order, run `npm install` after cl
 
 ## Use
 
-`gulp sass` compile scss files
+Each command below requires an instance varable to passed through as a suffix to the command. In addition to the instance parameter, there is also a production parameter. Use this when finished developing locally and you are ready to deploy to Marketo. It runs a series of tasks such as changing local URLs to the correct server URLS, minifying CSS and JS, etc.
 
-`gulp connect` start a development server with no auto-reload
+The available params are
+- prod
 
-`gulp watch` watch the src and scss directories for changes and compile/transpile as needed
+So an example of a command if you want to deploy a template for CL would be:
 
-`gulp connect watch` the most useful one, start the server with live reload and watch for changes
+`gulp connect watch --something --prod`
+
+Here is a full list of local gulp commands that are supported:
+
+`gulp sass <params>` transpile scss files
+
+`gulp prefix <params>` run browser prefixing on transpiled css files and concatenate them into a single file with sourcemaps
+
+`gulp css <params>` run both the Sass build and the browser prefix
+
+`gulp connect <params>` start a development server with no auto-reload
+
+`gulp watch <params>` watch the src and scss directories for changes and compile/transpile as needed
+
+`gulp connect watch <params>` the most useful one, start the server with live reload and watch for changes
 
 Happy hacking.

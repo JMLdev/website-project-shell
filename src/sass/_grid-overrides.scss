@@ -1,7 +1,21 @@
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss';
+
 .container-fluid {
-    max-width: 1230px;
+    max-width: 95%;
 }
 
 section {
     margin-bottom: 96px;
+}
+
+@include media-breakpoint-up(md) {
+    .container-fluid {
+        max-width: 85%;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .container-fluid {
+        max-width: 80%;
+    }
 }
